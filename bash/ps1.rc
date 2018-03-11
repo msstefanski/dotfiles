@@ -1,0 +1,15 @@
+# Change the prompt text
+parse_git_branch() {
+        git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
+#https://misc.flogisoft.com/bash/tip_colors_and_formatting
+#control     \e[
+#reset       [0m
+#256 foreground colors: \e[38;5;COLORNUMm
+#256 background colors: \e[48;5;COLORNUMm
+# colored background prompt
+#export PS1="\e[48;5;22m\e[37m\u@\h\e[0m \e[48;5;17m\e[37m\w\e[0m \e[48;5;58m\e[37m\$(parse_git_branch)\e[0m\n$ "
+# colored forground prompt
+#export PS1="[\[\033[32m\]\u@\h] \[\033[36m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\]\n$ "
+export PS1="\e[38;5;36m\u@\h\e[0m \e[38;5;75m\w\e[0m \e[38;5;221m\$(parse_git_branch)\e[0m\n$ "
