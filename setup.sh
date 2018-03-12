@@ -35,3 +35,11 @@ fi
 if [ ! -f $HOME/.tmux.conf ]; then
     ln -s $DOTFILESDIR/tmux.conf $HOME/.tmux.conf
 fi
+
+# tig
+if [ ! -f $HOME/.tigrc ]; then
+    ln -s $DOTFILESDIR/tigrc $HOME/.tigrc
+fi
+if [ ! -d $HOME/.config/tig ]; then
+    ln -s $DOTFILESDIR/tig $HOME/.config/tig
+fi
